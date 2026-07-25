@@ -185,7 +185,8 @@ end)
 
 -- 5. BANCO DE DADOS DOS SCRIPTS (Aba 2)
 local ScriptData = {
-    ["Sound ALL Beta"] = "https://raw.githubusercontent.com/YuMAID369/Sound-ALL-Project/refs/heads/main/Sound%20ALL%20SpwnCub%20V1%20Teste%20Beta", -- [ADICIONADO]
+    ["Terminal Join Server"] = "https://raw.githubusercontent.com/YuMAID369/Terminal-Join-Server-SpwnCub-/refs/heads/main/SPWN%20Join", -- [ADICIONADO]
+    ["Sound ALL Beta"] = "https://raw.githubusercontent.com/YuMAID369/Sound-ALL-Project/refs/heads/main/Sound%20ALL%20SpwnCub%20V1%20Teste%20Beta",
     ["CLOCK CREATOR PROPs"] = "https://raw.githubusercontent.com/YuMAID369/CLOCK-Creator-Project-PROP-SPWN/refs/heads/main/CLOCK%20Creator%20Project%20PROP%20SPWN%20CLIENT%20V1",
     ["DELETE PLAYER Anti NUKE"] = "https://raw.githubusercontent.com/YuMAID369/Anti-PLAYER-/refs/heads/main/REMOVE%20PLAYER",
     ["Summoner Vehicles Panel"] = "https://raw.githubusercontent.com/YuMAID369/VEHICLE-KILL-PANEL-/refs/heads/main/Summoner%20Vehicles%20V1%20KILL",
