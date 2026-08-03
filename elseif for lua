@@ -15,7 +15,7 @@ local IntroGui = Create("ScreenGui", CoreGui, {Name = "CubnitSpinIntro", ResetOn
 
 -- Configuração do Efeito Sonoro de Clique (Injetado na ScreenGui)
 local ClickSound = Create("Sound", ScreenGui, {
-    SoundId = "rbxassetid://105309724097406",
+    SoundId = "rbxassetid://118415301510285",
     Volume = 1,
     PlayOnRemove = false
 })
@@ -29,11 +29,11 @@ end
 
 -- Elementos da Intro Animação
 local Background = Create("Frame", IntroGui, {Name = "Background", Size = UDim2.new(1, 1000, 1, 1000), Position = UDim2.new(0, -500, 0, -500), BackgroundColor3 = Color3.fromRGB(0,0,0), BackgroundTransparency = 1, BorderSizePixel = 0, ZIndex = 9999})
-local IconImage = Create("ImageLabel", IntroGui, {Name = "SpinIcon", BackgroundTransparency = 1, Image = "rbxassetid://130275641191868", ImageColor3 = Color3.fromRGB(255,255,255), ImageTransparency = 1, Size = UDim2.new(0, 250, 0, 250), AnchorPoint = Vector2.new(0.5,0.5), ZIndex = 10000, Position = UDim2.new(-0.2, 0, 1.2, 0), Rotation = -180})
+local IconImage = Create("ImageLabel", IntroGui, {Name = "SpinIcon", BackgroundTransparency = 1, Image = "rbxassetid://79972640574241", ImageColor3 = Color3.fromRGB(255,255,255), ImageTransparency = 1, Size = UDim2.new(0, 250, 0, 250), AnchorPoint = Vector2.new(0.5,0.5), ZIndex = 10000, Position = UDim2.new(-0.2, 0, 1.2, 0), Rotation = -180})
 Create("UIAspectRatioConstraint", IconImage, {AspectRatio = 1})
 
 -- 1. BOTÃO DE CONTROLE EXTERNO
-local OpenBtn = Create("ImageButton", ScreenGui, {Name = "OpenBtn", Position = UDim2.new(0.5, 0, 0.5, 0), AnchorPoint = Vector2.new(0.5, 0.5), Size = UDim2.new(0, 85, 0, 85), BackgroundTransparency = 1, Image = "rbxassetid://125616167121065", ImageTransparency = 1, Visible = true})
+local OpenBtn = Create("ImageButton", ScreenGui, {Name = "OpenBtn", Position = UDim2.new(0.5, 0, 0.5, 0), AnchorPoint = Vector2.new(0.5, 0.5), Size = UDim2.new(0, 85, 0, 85), BackgroundTransparency = 1, Image = "rbxassetid://71919395979661", ImageTransparency = 1, Visible = true})
 
 -- Sistema de Arrasto do OpenBtn
 local dragToggle, dragStart, startPos
@@ -82,7 +82,7 @@ Create("UIPadding", PageAbout, {
 local AboutTextLabel = Create("TextLabel", PageAbout, {
     Size = UDim2.new(1, 0, 0, 550), 
     BackgroundTransparency = 1, 
-    Text = '<font align="justify">Aba ᓵ⚍ʖリ╎ℸ ̣// ACCESS LOG] O Project ᓵ⚍ʖリ╎ℸ consiste na criação de um script com funções universais, desenvolvido para se expandir por diversos jogos da plataforma Roblox. O objective do projeto é explorar, desenvolver e reunir todo tipo de sistema, ferramenta e ideia que possa ser aplicada em diferentes experiências, sempre trazendo novas funcionalidades e buscando inovação.<br/><br/>Além de criar sistemas para diversos jogos, o Project ᓵ⚍ʖリ╎ℸ também tem como objetivo construir uma comunidade de desenvolvedores interessados em compartilhar conhecimento, ensinar o desenvolvimento de projetos e trocar experiências sobre Vibe Coding.<br/><br/>Se você deseja fazer parte do Project ᓵ⚍ʖae╎ℸ, conhecer mais sobre a iniciativa ou contribuir com ideias, desenvolver sistemas, criar designs ou acompanhar sua evolução, entre no servidor do Discord do Project ᓵ⚍ʖリ╎ℸ.<br/><br/>( Signature ᓭ!¡∴リ )</font>', 
+    Text = '// ACCESS LOG] O Project SPWN CLIENT consiste na criação de um script com funções universais, desenvolvido para se expandir por diversos jogos da plataforma Roblox. O objective do projeto é explorar, desenvolver e reunir todo tipo de sistema, ferramenta e ideia que possa ser aplicada em diferentes experiências, sempre trazendo novas funcionalidades e buscando inovação. Além de criar sistemas para diversos jogos, o Project SPAWN CLIENT também tem como objetivo construir uma comunidade de desenvolvedores interessados em compartilhar conhecimento, ensinar o desenvolvimento de projetos e trocar experiências sobre Vibe Coding. Se você deseja fazer parte do Project SPAWN CLIENT, conhecer mais sobre a iniciativa ou contribuir com ideias, desenvolver sistemas, criar designs ou acompanhar sua evolução, entre no servidor do Discord do Project ( Signature CHROLLO)', 
     TextColor3 = Color3.fromRGB(255,255,255), 
     TextSize = 15, 
     Font = Enum.Font.Arcade, 
