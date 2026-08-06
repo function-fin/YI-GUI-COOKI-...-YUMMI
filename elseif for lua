@@ -1,7 +1,6 @@
 local TweenService, CoreGui, UIS = game:GetService("TweenService"), game:GetService("CoreGui"), game:GetService("UserInputService")
 local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- Função Construtora Otimizada (Suporta UICorner, UIStroke e Propriedades)
 local function Create(className, parent, props, corner, stroke)
     local obj = Instance.new(className)
     for k, v in pairs(props or {}) do obj[k] = v end
@@ -14,7 +13,6 @@ local function Create(className, parent, props, corner, stroke)
     return obj
 end
 
--- Janelas Principais e Som
 local ScreenGui = Create("ScreenGui", PlayerGui, {Name = "BrookHaven_V16_Final", ResetOnSpawn = false})
 local IntroGui = Create("ScreenGui", CoreGui, {Name = "CubnitSpinIntro", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 999999})
 local ClickSound = Create("Sound", ScreenGui, {SoundId = "rbxassetid://118415301510285", Volume = 1})
@@ -24,12 +22,10 @@ local function PlayClickSound()
     ClickSound:Play()
 end
 
--- Intro Animação
 local Background = Create("Frame", IntroGui, {Name = "Background", Size = UDim2.new(1, 1000, 1, 1000), Position = UDim2.new(0, -500, 0, -500), BackgroundColor3 = Color3.fromRGB(0,0,0), BackgroundTransparency = 1, BorderSizePixel = 0, ZIndex = 9999})
 local IconImage = Create("ImageLabel", IntroGui, {Name = "SpinIcon", BackgroundTransparency = 1, Image = "rbxassetid://86624275605481", ImageColor3 = Color3.fromRGB(255,255,255), ImageTransparency = 1, Size = UDim2.new(0, 250, 0, 250), AnchorPoint = Vector2.new(0.5,0.5), ZIndex = 10000, Position = UDim2.new(-0.2, 0, 1.2, 0), Rotation = -180})
 Create("UIAspectRatioConstraint", IconImage, {AspectRatio = 1})
 
--- Botão de Controle Externo (OpenBtn)
 local OpenBtn = Create("ImageButton", ScreenGui, {Name = "OpenBtn", Position = UDim2.new(0.5, 0, 0.5, 0), AnchorPoint = Vector2.new(0.5, 0.5), Size = UDim2.new(0, 85, 0, 85), BackgroundTransparency = 1, Image = "rbxassetid://131615335465809", ImageTransparency = 1, Visible = true})
 
 local dragToggle, dragStart, startPos
@@ -50,10 +46,8 @@ UIS.InputChanged:Connect(function(input)
 end)
 UIS.InputEnded:Connect(function(input) if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then dragToggle = false end end)
 
--- Quadro Principal
 local MainFrame = Create("Frame", ScreenGui, {Name = "MainFrame", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 420, 0, 310), BackgroundColor3 = Color3.fromRGB(0,0,0), BorderSizePixel = 0, Active = true, Draggable = true, Visible = false}, 8, {Color = Color3.fromRGB(255, 255, 255), Thickness = 1, ApplyStrokeMode = Enum.ApplyStrokeMode.Border})
 
--- Cabeçalho e Navegação
 local HeaderBar = Create("Frame", MainFrame, {Size = UDim2.new(1, 0, 0, 65), BackgroundTransparency = 1})
 local Title = Create("TextLabel", HeaderBar, {Size = UDim2.new(1, 0, 0, 50), Position = UDim2.new(0, 0, 0, 5), BackgroundTransparency = 1, Text = "Sobre o ᓵ⚍ʖリ╎ℸ ", TextColor3 = Color3.fromRGB(255,255,255), TextSize = 28, Font = Enum.Font.Arcade, TextWrapped = true, TextXAlignment = Enum.TextXAlignment.Center, TextYAlignment = Enum.TextYAlignment.Center})
 Create("Frame", HeaderBar, {Name = "WhiteSeparator", Size = UDim2.new(1, -20, 0, 7), Position = UDim2.new(0.5, 0, 0, 58), AnchorPoint = Vector2.new(0.5, 0), BackgroundColor3 = Color3.fromRGB(255,255,255), BorderSizePixel = 0})
@@ -61,20 +55,18 @@ Create("Frame", HeaderBar, {Name = "WhiteSeparator", Size = UDim2.new(1, -20, 0,
 local LeftBtn = Create("TextButton", HeaderBar, {Size = UDim2.new(0, 38, 0, 38), Position = UDim2.new(0, 10, 0, 10), BackgroundColor3 = Color3.fromRGB(255,255,255), Text = "<", TextColor3 = Color3.fromRGB(0,0,0), TextSize = 28, Font = Enum.Font.SourceSansBold, Visible = false, ZIndex = 10}, 6)
 local RightBtn = Create("TextButton", HeaderBar, {Size = UDim2.new(0, 38, 0, 38), Position = UDim2.new(1, -48, 0, 10), BackgroundColor3 = Color3.fromRGB(255,255,255), Text = ">", TextColor3 = Color3.fromRGB(0,0,0), TextSize = 28, Font = Enum.Font.SourceSansBold, ZIndex = 10}, 6)
 
--- Páginas de Conteúdo
 local PageAbout = Create("ScrollingFrame", MainFrame, {Size = UDim2.new(1, -20, 1, -145), Position = UDim2.new(0, 12, 0, 75), BackgroundTransparency = 1, CanvasSize = UDim2.new(0, 0, 0, 400), ScrollBarThickness = 3, ScrollingDirection = Enum.ScrollingDirection.Y, Visible = true})
 Create("UIPadding", PageAbout, {PaddingLeft = UDim.new(0, 6), PaddingRight = UDim.new(0, 12), PaddingTop = UDim.new(0, 5)})
 Create("TextLabel", PageAbout, {Size = UDim2.new(1, 0, 0, 550), BackgroundTransparency = 1, Text = '// ACCESS LOG] O Project SPWN CLIENT consiste na criação de um script com funções universais, desenvolvido para se expandir por diversos jogos da plataforma Roblox. O objective do projeto é explorar, desenvolver e reunir todo tipo de sistema, ferramenta e ideia que possa ser aplicada em diferentes experiências, sempre trazendo novas funcionalidades e buscando inovação. Além de criar sistemas para diversos jogos, o Project SPAWN CLIENT também tem como objetivo construir uma comunidade de desenvolvedores interessados em compartilhar conhecimento, ensinar o desenvolvimento de projetos e trocar experiências sobre Vibe Coding. Se você deseja fazer parte do Project SPAWN CLIENT, conhecer mais sobre a iniciativa ou contribuir com ideias, desenvolver sistemas, criar designs ou acompanhar sua evolução, entre no servidor do Discord do Project ( Signature CHROLLO)', TextColor3 = Color3.fromRGB(255,255,255), TextSize = 15, Font = Enum.Font.Arcade, TextWrapped = true, RichText = true, TextXAlignment = Enum.TextXAlignment.Left, TextYAlignment = Enum.TextYAlignment.Top})
 
-local PageScripts = Create("ScrollingFrame", MainFrame, {Size = UDim2.new(1, -15, 1, -145), Position = UDim2.new(0, 8, 0, 75), BackgroundTransparency = 1, Visible = false, CanvasSize = UDim2.new(0, 0, 0, 510), ScrollBarThickness = 3})
+local PageScripts = Create("ScrollingFrame", MainFrame, {Size = UDim2.new(1, -15, 1, -145), Position = UDim2.new(0, 8, 0, 75), BackgroundTransparency = 1, Visible = false, CanvasSize = UDim2.new(0, 0, 0, 550), ScrollBarThickness = 3})
 Create("UIGridLayout", PageScripts, {CellSize = UDim2.new(0, 96, 0, 52), CellPadding = UDim2.new(0, 5, 0, 6), HorizontalAlignment = Enum.HorizontalAlignment.Center})
 
-local PageTools = Create("ScrollingFrame", MainFrame, {Size = UDim2.new(1, -16, 1, -145), Position = UDim2.new(0, 8, 0, 75), BackgroundTransparency = 1, Visible = false, CanvasSize = UDim2.new(0, 0, 0, 200), ScrollBarThickness = 0, ScrollingEnabled = false})
+local PageTools = Create("ScrollingFrame", MainFrame, {Size = UDim2.new(1, -16, 1, -145), Position = UDim2.new(0, 8, 0, 75), BackgroundTransparency = 1, Visible = false, CanvasSize = UDim2.new(0, 0, 0, 180), ScrollBarThickness = 3, ScrollingEnabled = true})
 Create("UIGridLayout", PageTools, {CellSize = UDim2.new(0, 64, 0, 72), CellPadding = UDim2.new(0, 4, 0, 8), HorizontalAlignment = Enum.HorizontalAlignment.Center})
 
 local WhiteBarSeparator = Create("Frame", MainFrame, {Name = "WhiteBarSeparator", Size = UDim2.new(1, -20, 0, 4), Position = UDim2.new(0.5, 0, 1, -78), AnchorPoint = Vector2.new(0.5, 0), BackgroundColor3 = Color3.fromRGB(255,255,255), BorderSizePixel = 0, Visible = false})
 
--- Rodapé
 local FooterBar = Create("Frame", MainFrame, {Size = UDim2.new(1, 0, 0, 65), Position = UDim2.new(0, 0, 1, -65), BackgroundColor3 = Color3.fromRGB(22,22,22), BorderSizePixel = 0})
 local CloseBtn = Create("TextButton", FooterBar, {Name = "CloseBtn", Size = UDim2.new(0, 160, 0, 42), Position = UDim2.new(0.5, -80, 0.5, -21), BackgroundColor3 = Color3.fromRGB(45,45,45), Text = "FECHAR UI", TextColor3 = Color3.fromRGB(255,255,255), TextSize = 22, Font = Enum.Font.Arcade}, 6, {Color = Color3.fromRGB(150,150,150)})
 CloseBtn.MouseButton1Click:Connect(function() PlayClickSound(); MainFrame.Visible = false end)
@@ -87,7 +79,12 @@ CreateSymbol(UDim2.new(0, 15, 0.5, -22)); CreateSymbol(UDim2.new(1, -60, 0.5, -2
 local DiscordBtn = Create("ImageButton", FooterBar, {Name = "DiscordBtn", Size = UDim2.new(0, 45, 0, 45), Position = UDim2.new(0, 65, 0.5, -22), BackgroundTransparency = 1, Image = "rbxassetid://135394655692633", Visible = true})
 DiscordBtn.MouseButton1Click:Connect(function() PlayClickSound(); loadstring(game:HttpGet("https://raw.githubusercontent.com/YuMAID369/Join-Discordv1/refs/heads/main/Discord%20Open"))() end)
 
--- Sistema de Navegação
+local AdapterBtn = Create("ImageButton", FooterBar, {Name = "AdapterBtn", Size = UDim2.new(0, 45, 0, 45), Position = UDim2.new(0, 65, 0.5, -22), BackgroundTransparency = 1, Image = "rbxassetid://73146839145612", Visible = false})
+AdapterBtn.MouseButton1Click:Connect(function() PlayClickSound(); loadstring(game:HttpGet("https://raw.githubusercontent.com/function-fin/ADAPTADOR-1.0-V1-SPAWN/refs/heads/main/Modified%20Tools%20Adapter"))() end)
+
+local GuideBtn = Create("ImageButton", FooterBar, {Name = "GuideBtn", Size = UDim2.new(0, 45, 0, 45), Position = UDim2.new(1, -110, 0.5, -22), BackgroundTransparency = 1, Image = "rbxassetid://82557612348731", Visible = false})
+GuideBtn.MouseButton1Click:Connect(function() PlayClickSound(); loadstring(game:HttpGet("https://raw.githubusercontent.com/function-fin/AVISO-IMPORTANTE-PAINEL-TOOL/refs/heads/main/TOOL%20AN%C3%9ANCIO%20GUIA"))() end)
+
 local currentPage = 1
 local function updateNavigation(page)
     currentPage = page
@@ -95,7 +92,10 @@ local function updateNavigation(page)
     PageScripts.Visible = (page == 2)
     PageTools.Visible = (page == 3)
     WhiteBarSeparator.Visible = (page == 3)
+    
     DiscordBtn.Visible = (page == 1)
+    AdapterBtn.Visible = (page == 3)
+    GuideBtn.Visible = (page == 3)
 
     local titleData = {
         [1] = {text = "Sobre o ᓵ⚍ʖリ╎ℸ ", size = 28, uSize = UDim2.new(1, 0, 0, 50), pos = UDim2.new(0, 0, 0, 5), left = false, right = true},
@@ -110,8 +110,8 @@ end
 RightBtn.MouseButton1Click:Connect(function() if currentPage < 3 then PlayClickSound(); updateNavigation(currentPage + 1) end end)
 LeftBtn.MouseButton1Click:Connect(function() if currentPage > 1 then PlayClickSound(); updateNavigation(currentPage - 1) end end)
 
--- Banco de Dados dos Scripts (Aba 2)
 local ScriptData = {
+    ["DEX OLD"] = "https://raw.githubusercontent.com/infyiff/backup/main/dex.lua",
     ["Terminal Join Server"] = "https://raw.githubusercontent.com/YuMAID369/Terminal-Join-Server-SpwnCub-/refs/heads/main/SPWN%20Join",
     ["Sound ALL Beta"] = "https://raw.githubusercontent.com/YuMAID369/Sound-ALL-Project/refs/heads/main/Sound%20ALL%20SpwnCub%20V1%20Teste%20Beta",
     ["CLOCK CREATOR PROPs"] = "https://raw.githubusercontent.com/YuMAID369/CLOCK-Creator-Project-PROP-SPWN/refs/heads/main/CLOCK%20Creator%20Project%20PROP%20SPWN%20CLIENT%20V1",
@@ -155,20 +155,18 @@ for name, link in pairs(ScriptData) do
     btn.MouseButton1Click:Connect(function() PlayClickSound(); loadstring(game:HttpGet(link))() end)
 end
 
--- Banco de Dados e Geração da Aba 3
 local ToolData = {
-    {name = "Fling Ball\nTool", link = "https://raw.githubusercontent.com/YuMAID369/Fling-Ball-Cubnit-V1/refs/heads/main/Kill%20Ball%20V1"},
-    {name = "TOOL\nTELEKINESIS", link = "https://raw.githubusercontent.com/YuMAID369/TELEKINESIS-/refs/heads/main/Telekinesis%20Tool"},
-    {name = "TP TOOL", link = "https://raw.githubusercontent.com/YuMAID369/TP-TOOL-v1/refs/heads/main/TP%20Tool"},
-    {name = "FLING\nAll SELECT V1", link = "https://raw.githubusercontent.com/YuMAID369/Atom-selector-/refs/heads/main/Target%20Kill"},
-    {name = "FLING\nAll SELECT V2", link = "https://raw.githubusercontent.com/YuMAID369/SELECT-MATTER/refs/heads/main/SPWN%20KILL%20V2%20SELECT"},
-    {name = "SELECT\nMATTER TP", link = "https://raw.githubusercontent.com/YuMAID369/ToolSpwnTp/refs/heads/main/SPWNTPtool"},
-    {name = "SELECT\nMATTER V3", link = "https://raw.githubusercontent.com/YuMAID369/SELECT-MATTER-V3-/refs/heads/main/FLING%20V3%20TOOL%20SPWN"},
-    {name = "", link = ""}, {name = "", link = ""}, {name = "", link = ""}, {name = "", link = ""}, {name = "", link = ""}
+    {id = "7314683914561", name = "Fling Ball\nTool", link = "https://raw.githubusercontent.com/YuMAID369/Fling-Ball-Cubnit-V1/refs/heads/main/Kill%20Ball%20V1"},
+    {id = "7314683914562", name = "TOOL\nTELEKINESIS", link = "https://raw.githubusercontent.com/YuMAID369/TELEKINESIS-/refs/heads/main/Telekinesis%20Tool"},
+    {id = "7314683914563", name = "TP TOOL", link = "https://raw.githubusercontent.com/YuMAID369/TP-TOOL-v1/refs/heads/main/TP%20Tool"},
+    {id = "7314683914564", name = "FLING\nAll SELECT V1", link = "https://raw.githubusercontent.com/YuMAID369/Atom-selector-/refs/heads/main/Target%20Kill"},
+    {id = "7314683914565", name = "FLING\nAll SELECT V2", link = "https://raw.githubusercontent.com/YuMAID369/SELECT-MATTER/refs/heads/main/SPWN%20KILL%20V2%20SELECT"},
+    {id = "7314683914566", name = "SELECT\nMATTER TP", link = "https://raw.githubusercontent.com/YuMAID369/ToolSpwnTp/refs/heads/main/SPWNTPtool"},
+    {id = "7314683914567", name = "SELECT\nMATTER V3", link = "https://raw.githubusercontent.com/YuMAID369/SELECT-MATTER-V3-/refs/heads/main/FLING%20V3%20TOOL%20SPWN"}
 }
 
 for _, data in ipairs(ToolData) do
-    local toolBtn = Create("TextButton", PageTools, {BackgroundColor3 = Color3.fromRGB(45, 45, 45), Text = data.name, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 16, Font = Enum.Font.LuckiestGuy, TextWrapped = true, TextXAlignment = Enum.TextXAlignment.Center, TextYAlignment = Enum.TextYAlignment.Center}, 2)
+    local toolBtn = Create("TextButton", PageTools, {Name = "Tool_" .. data.id, BackgroundColor3 = Color3.fromRGB(45, 45, 45), Text = data.name, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14, Font = Enum.Font.LuckiestGuy, TextWrapped = true, TextXAlignment = Enum.TextXAlignment.Center, TextYAlignment = Enum.TextYAlignment.Center}, 2)
     if data.link ~= "" then
         toolBtn.MouseButton1Click:Connect(function() PlayClickSound(); loadstring(game:HttpGet(data.link))() end)
     else
@@ -176,7 +174,6 @@ for _, data in ipairs(ToolData) do
     end
 end
 
--- Modal de Confirmação de Encerramento
 local CloseConfirmFrame = Create("Frame", ScreenGui, {Name = "CloseConfirmFrame", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 340, 0, 185), BackgroundColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Active = true, Draggable = true, Visible = false, ZIndex = 100}, nil, {Color = Color3.fromRGB(255, 255, 255), Thickness = 2, ApplyStrokeMode = Enum.ApplyStrokeMode.Border})
 
 Create("ImageLabel", CloseConfirmFrame, {Name = "BackgroundSymbol", Size = UDim2.new(0, 150, 0, 150), Position = UDim2.new(0.5, 0, 0.5, 0), AnchorPoint = Vector2.new(0.5, 0.5), BackgroundTransparency = 1, Image = "rbxassetid://130275641191868", ImageTransparency = 0.85, ZIndex = 101})
@@ -193,7 +190,6 @@ CloseXBtn.MouseButton1Click:Connect(function() PlayClickSound(); CloseConfirmFra
 CancelBtn.MouseButton1Click:Connect(function() PlayClickSound(); CloseConfirmFrame.Visible = false end)
 ExitScriptBtn.MouseButton1Click:Connect(function() PlayClickSound(); ScreenGui:Destroy() end)
 
--- Lógica do Botão Open (Duplo Clique)
 local lastClick = 0
 OpenBtn.MouseButton1Click:Connect(function()
     local currentTime = tick()
@@ -206,7 +202,6 @@ OpenBtn.MouseButton1Click:Connect(function()
     lastClick = currentTime
 end)
 
--- Animação de Execução (Intro)
 task.spawn(function()
     task.wait(0.1)
     local infoE, infoB, infoI, infoD = TweenInfo.new(1.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), TweenInfo.new(1.8, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
